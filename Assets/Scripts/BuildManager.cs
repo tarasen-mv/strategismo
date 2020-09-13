@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
 {
 
 	public bool building;
+    public GameObject Shop;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,15 @@ public class BuildManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Shop.activeSelf)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Shop.SetActive(true);
+        }
     }
 
     void OnMouseEnter () {
